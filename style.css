@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+   /* Colors  */
+
+    /* Primary */
+
+--Very-Dark-Magenta: hsl(300, 43%, 22%);
+--Soft-Pink: hsl(333, 80%, 67%);
+
+    /* Neutral  */
+
+--Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+--Light-Grayish-Magenta: hsl(300, 24%, 96%);
+--White: hsl(0, 0%, 100%);
+ 
+    /* Fonts  */
+    
+    --Font-size: 15px;
+    --Font-Family: 'League Spartan',sans-serif;
+    --Font-Weight-normal: 400;
+    --Font-Weight-medium: 500;
+    --Font-Weight-bold: 700;
+
+}
+body{
+    width: 100wv;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    
+    font-family: var(--Font-Family);
+    background-color: var(--White);
+    background-image: 
+    url('./images/bg-pattern-top-desktop.svg'), /* URL of the first image */
+    url('./images/bg-pattern-bottom-desktop.svg'); /* URL of the second image */
+    background-position: top center, bottom center;
+    background-repeat: no-repeat;
+}
+.container {
+   position: relative;
+   transform: translate(-50%,-50%);
+   top: 50%;
+   left: 50%;
+  width: 100%;
+  max-width: 1200px;
+  padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.top{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+.left{
+    width: 50%;
+}
+.left > p{
+    color: var(--Dark-Grayish-Magenta);
+    margin-top: 2rem;
+    width: 80%;
+    line-height: 1.2rem;
+}
+.left > h1{
+    color: var(--Very-Dark-Magenta);
+    font-size: 3rem;
+    width: 65%;
+    font-weight: var(--Font-Weight-bold);
+}
+.one,.two,.three{
+    background-color: var(--Light-Grayish-Magenta);
+    border-radius: 10px;
+    display:flex;
+    gap: 2rem;
+    padding: 1rem;
+    height:min-content;
+    width: 90%;
+}
+.two{
+    margin-left: 2rem;
+}
+.three{
+    margin-left: 4.5rem;
+}
+.one > h3,.two >h3,.three >h3{
+    color: var(--Very-Dark-Magenta);
+}
+.right{
+    width: 50%;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: 1rem; 
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.first,.second,.third{
+    background-color: var(--Very-Dark-Magenta);
+    padding: 2.3rem;
+    border-radius: 10px;
+    width:350px;
+}
+.second{
+   transform: translateY(13%);
+}
+.third{
+    transform: translateY(23%);
+}
+.profile{
+    display: flex;
+    flex-direction: row;
+    gap: 1.7rem;
+    margin-bottom: 1.2rem;
+}
+.profile > img{
+    border-radius: 50%;
+    width: 18%;
+}
+.name{
+    margin-top: .4rem;
+}
+.name > h2{
+    color: var(--White);
+    font-size: 1rem;
+    margin-bottom: .3rem;
+}
+.name > b{
+    color: var(--Soft-Pink);
+    font-weight: var(--Font-Weight-normal);
+    font-size: var(--Font-size);
+}
+.third > p,.first > p,.second > p{
+    color: var(--White);
+    font-weight: var(--Font-Weight-normal);
+    line-height: 1.2rem;
+}
+
+@media (max-width:450px) {
+    body{
+        gap: 2rem;
+        background-image: url('./images/bg-pattern-top-mobile.svg'),
+        url('./images/bg-pattern-bottom-mobile.svg');
+        background-position: top center, bottom center;
+        background-repeat: no-repeat;
+    }
+    .container {
+      padding: 1rem;
+    }
+  
+    .top {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left {
+      width: 100%;
+      text-align: center;
+      margin-top:40rem;
+    }
+  
+    .left > h1 {
+      font-size: 2rem;
+      width: 60%;
+    }
+  
+    .left > p {
+      width: 79%;
+      margin-bottom: 1rem;
+    }
+    .right{
+       text-align: center;
+       transform: translateX(-46%);
+    }
+    .bottom{
+        flex-direction:column;
+        gap: 1px;
+    }
+    .one,.two,.three{
+        flex-direction: column;
+        gap: 10px;
+        width: 180%;
+    }
+    .two{
+       transform: translateX(-10%);
+    }
+    .three{
+        transform: translateX(-23%);
+    }
+    .first,.second,.third{
+        height: 240px;
+        width: 340px;
+    }
+    .first > p,.second > p,.third > p{
+        width: 95%;
+        line-height: 1.3rem;
+    }
+
+}
